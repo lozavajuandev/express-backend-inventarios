@@ -1,4 +1,4 @@
-import pool from "./config/db";
+import pool from "./config/db.js";
 
 try {
   const respuesta = await pool.query("SLECT NOW()");

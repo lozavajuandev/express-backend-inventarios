@@ -1,11 +1,14 @@
 import express from "express";
-import createNewCount from "../controllers/counts.controller.js";
+
+import {
+  listCounts,
+  createNewCount,
+} from "../controllers/counts.controller.js";
+
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  res.status(200).json({ message: "Counts endopoint`" });
-});
+router.get("/", listCounts);
 
-router.post("/submitCount", createNewCount);
+router.post("/submit", createNewCount);
 
 export default router;
